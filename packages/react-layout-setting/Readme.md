@@ -3,7 +3,7 @@
 ###Quick Start
 1. install package in your project
 ```
-npm i react-layout-setting
+npm i react-layout-table
 ```
 
 2. import style and package
