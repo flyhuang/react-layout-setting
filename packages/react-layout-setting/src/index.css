@@ -1,0 +1,21 @@
+.g-rgl-layout {
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+.g-rgl-grid {
+    border: 1px solid #6d747f;
+    padding: 20px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.g-rgl-grid:hover {
+    background-color: #565a65;
+    border-color: #373a41;
+}
+
+.g-rgl-grid-active {
+    background-color: #565a65;
+    border-color: #373a41;
+}

@@ -1,0 +1,38 @@
+{
+  "name": "react-layout-setting",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "style": "dist/index.css",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "lodash.range": "^3.2.0",
+    "prop-types": "^15.7.2",
+    "@babel/runtime": "^7.4.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/react": "^5.1.11",
+    "babel-loader": "^8.0.6",
+    "babel-preset-swiftcarrot": "^0.6.2",
+    "rollup": "^1.11.3",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-postcss": "^2.0.3"
+  },
+  "peerDependencies": {
+    "react": "^0.14 || ^15.5.4 || ^16.1.1",
+    "react-dom": "^0.14 || ^15.5.4 || ^16.1.1"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "build": "rm -rf dist && NODE_ENV=production rollup -c",
+    "prepublishOnly": "npm run build"
+  }
+}
