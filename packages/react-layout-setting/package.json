@@ -23,7 +23,8 @@
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.3",
-    "rollup-plugin-postcss": "^2.0.3"
+    "rollup-plugin-postcss": "^2.0.3",
+    "soul-archetype-commit": "0.0.2"
   },
   "peerDependencies": {
     "react": "^0.14 || ^15.5.4 || ^16.1.1",
@@ -33,6 +34,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "rm -rf dist && NODE_ENV=production rollup -c",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "commit": "git add . && soul-archetype-commit",
+    "release": "standard-version"
   }
 }
