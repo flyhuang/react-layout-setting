@@ -5,7 +5,6 @@ import postcss from 'rollup-plugin-postcss';
 import pkg from './package.json';
 
 const input = './src/index.js';
-const cssExportMap = {};
 const external = id => !id.startsWith('.') && !id.startsWith('/');
 
 export default [
@@ -23,11 +22,7 @@ export default [
             }),
             nodeResolve(),
             postcss({
-                getExportNamed: false,
-                getExport(id) {
-                    return cssExportMap[id];
-                },
-                extract: 'dist/index.css',
+                modules: false
             }),
             commonjs()
         ]
