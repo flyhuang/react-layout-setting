@@ -30,29 +30,32 @@ export default class ReactLayoutSetting extends Component {
         const { callback } = this.props
 
         return (
-            <table className="g-rgl-layout">{
-                range(tableRow).map((_row) => {
-                    return (
-                        <tr> {
-                            range(tableCol).map((_col) => {
-                                return (
-                                    <td className={(_row + 1 <= row && _col + 1 <= col) ? 'g-rgl-grid g-rgl-grid-active' : 'g-rgl-grid'}
-                                        onMouseEnter={() => {
-                                            this.setState({
-                                                row: _row + 1,
-                                                col: _col + 1
-                                            })
-                                        }}
-                                        onClick={() => {
-                                            callback && callback(_row + 1, _col + 1)
-                                        }}
-                                    />
-                                )
-                            })
-                        }
-                        </tr>)
-                })
-            }
+            <table className="g-rgl-layout">
+                <tbody>
+                    {
+                        range(tableRow).map((_row) => {
+                            return (
+                                <tr key={`${_row}-tr`}>{
+                                    range(tableCol).map((_col) => {
+                                        return (
+                                            <td className={(_row + 1 <= row && _col + 1 <= col) ? 'g-rgl-grid g-rgl-grid-active' : 'g-rgl-grid'}
+                                                key={`${_row}-${_col}-td`}
+                                                onMouseEnter={() => {
+                                                    this.setState({
+                                                        row: _row + 1,
+                                                        col: _col + 1
+                                                    })
+                                                }}
+                                                onClick={() => {
+                                                    callback && callback(_row + 1, _col + 1)
+                                                }}/>
+                                        )
+                                    })
+                                }
+                                </tr>)
+                        })
+                }
+            </tbody>
             </table>
         )
     }
